@@ -1,0 +1,18 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      glob: "*.{js,jsx,ts,tsx}"
+      run: npx @biomejs/biome lint --no-errors-on-unmatched {staged_files}
+    format:
+      glob: "*.{js,jsx,ts,tsx,json,md}"
+      run: npx @biomejs/biome format --write --no-errors-on-unmatched {staged_files}
+      stage_fixed: true
+    check-types:
+      glob: "*.{ts,tsx}"
+      run: npx tsc --noEmit
+
+commit-msg:
+  commands:
+    commitlint:
+      run: npx commitlint --edit {1} 
