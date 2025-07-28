@@ -14,7 +14,8 @@
     "type-check": "pnpm -r run type-check",
     "lint": "pnpm -r run lint",
     "format": "pnpm -r run format",
-    "clean": "pnpm -r run clean"
+    "clean": "pnpm -r run clean",
+    "preinstall": "lefthook install"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.1.2",

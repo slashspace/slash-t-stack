@@ -3,14 +3,14 @@ pre-commit:
   commands:
     lint:
       glob: "*.{js,jsx,ts,tsx}"
-      run: npx @biomejs/biome lint --no-errors-on-unmatched {staged_files}
+      run: pnpm lint
     format:
       glob: "*.{js,jsx,ts,tsx,json,md}"
-      run: npx @biomejs/biome format --write --no-errors-on-unmatched {staged_files}
+      run: pnpm format
       stage_fixed: true
     check-types:
       glob: "*.{ts,tsx}"
-      run: npx tsc --noEmit
+      run: pnpm type-check
 
 commit-msg:
   commands:
