@@ -1,4 +1,5 @@
 import { serve } from "@hono/node-server";
+import type { ApiResponse } from "@shared/types";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import demoRouter from "./routes/demo";
@@ -12,7 +13,15 @@ app.route("/api", demoRouter);
 
 // health check
 app.get("/health", (c) => {
-	return c.json({ status: "ok", timestamp: new Date().toISOString() });
+	const data: ApiResponse = {
+		success: true,
+		message: "Server is running",
+		data: {
+			version: "1.0.0",
+			timestamp: new Date().toISOString(),
+		},
+	};
+	return c.json(data);
 });
 
 const server = serve(

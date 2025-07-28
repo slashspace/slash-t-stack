@@ -3,11 +3,6 @@
   "version": "1.0.0",
   "description": "Full-stack TypeScript monorepo starter with shared types",
   "private": true,
-  "workspaces": [
-    "client",
-    "server",
-    "shared"
-  ],
   "scripts": {
     "dev": "pnpm --parallel -r run dev",
     "build": "pnpm -r run build",
@@ -15,7 +10,7 @@
     "lint": "pnpm -r run lint",
     "format": "pnpm -r run format",
     "clean": "pnpm -r run clean",
-    "preinstall": "lefthook install"
+    "postinstall": "pnpm --filter shared build && pnpm --filter server build"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.1.2",
@@ -31,6 +26,11 @@
     "pnpm": ">=10"
   },
   "packageManager": "pnpm@10.0.0",
+  "workspaces": [
+    "./server",
+    "./client",
+    "./shared"
+  ],
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"

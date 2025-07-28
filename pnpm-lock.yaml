@@ -33,6 +33,9 @@ importers:
       hono:
         specifier: ^4.8.9
         version: 4.8.9
+      shared:
+        specifier: workspace:*
+        version: link:../shared
     devDependencies:
       '@types/node':
         specifier: ^20.11.17
@@ -43,6 +46,8 @@ importers:
       tsx:
         specifier: ^4.7.1
         version: 4.20.3
+
+  shared: {}
 
 packages:
 
