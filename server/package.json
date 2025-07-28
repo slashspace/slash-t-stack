@@ -1,9 +1,18 @@
 {
   "name": "server",
   "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "import": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsc",
+    "build": "pnpm clean && pkgroll",
     "type-check": "tsc --noEmit",
     "lint": "biome lint .",
     "format": "biome format . --write",
@@ -15,6 +24,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
+    "pkgroll": "^2.14.5",
     "tsx": "^4.7.1"
   }
 }
