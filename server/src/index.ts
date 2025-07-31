@@ -1,33 +1,21 @@
 import { serve } from "@hono/node-server";
-import type { ApiResponse } from "@shared/types";
+import { env } from "@shared/env";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import demoRouter from "./routes/demo";
+import healthRouter from "./routes/health";
 
 const app = new Hono();
-
 app.use(cors());
 
 // routes
 app.route("/api", demoRouter);
-
-// health check
-app.get("/health", (c) => {
-	const data: ApiResponse = {
-		success: true,
-		message: "Server is running",
-		data: {
-			version: "1.0.0",
-			timestamp: new Date().toISOString(),
-		},
-	};
-	return c.json(data);
-});
+app.route("/health", healthRouter);
 
 const server = serve(
 	{
 		fetch: app.fetch,
-		port: 3000,
+		port: env.PORT,
 	},
 	(info) => {
 		console.group();
