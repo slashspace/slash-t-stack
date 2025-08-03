@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Full-stack TypeScript monorepo starter with shared types",
   "private": true,
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=10"
+  },
+  "packageManager": "pnpm@10.0.0",
   "scripts": {
     "dev": "dotenvx run -- pnpm --parallel -r run dev",
     "build": "pnpm -r run build",
@@ -21,21 +26,11 @@
   },
   "dependencies": {
     "@dotenvx/dotenvx": "^1.48.4",
-    "zod": "^4.0.14"
+    "zod": "catalog:"
   },
   "peerDependencies": {
-    "typescript": "^5.8.3"
+    "typescript": "catalog:"
   },
-  "engines": {
-    "node": ">=20",
-    "pnpm": ">=10"
-  },
-  "packageManager": "pnpm@10.0.0",
-  "workspaces": [
-    "./server",
-    "./client",
-    "./shared"
-  ],
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
