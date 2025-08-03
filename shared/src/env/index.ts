@@ -6,23 +6,23 @@ export const env = createEnv({
 		NODE_ENV: z
 			.enum(["development", "production", "test"])
 			.default("development"),
-		PORT: z.number(),
-		HOST: z.string().default("localhost"),
+		PORT: z.coerce.number().default(3000),
+		HOST: z.coerce.string().default("localhost"),
 
 		// Database
 		DATABASE_URL: z.coerce.string(),
 
 		// API Keys (optional for development)
-		API_KEY: z.string().optional(),
+		API_KEY: z.coerce.string().optional(),
 
 		// Feature flags
-		ENABLE_LOGGING: z.boolean().default(true),
-		ENABLE_CACHE: z.boolean().default(false),
+		ENABLE_LOGGING: z.coerce.boolean().default(true),
+		ENABLE_CACHE: z.coerce.boolean().default(false),
 	},
 	clientPrefix: "PUBLIC_",
 	client: {
 		// Client-side environment variables (if any)
-		PUBLIC_API_URL: z.url().optional(),
+		PUBLIC_API_URL: z.coerce.string().optional(),
 	},
 	runtimeEnv: process.env,
 	emptyStringAsUndefined: true,
