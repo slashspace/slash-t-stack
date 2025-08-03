@@ -1,21 +1,29 @@
 {
-  "name": "shared",
+  "name": "@slash-kit/shared",
   "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
   "description": "Shared types and utilities for the project",
   "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
     "./types": {
       "types": "./dist/types/index.d.ts",
       "import": "./dist/types/index.js",
       "require": "./dist/types/index.js"
     },
     "./env": {
-      "types": "./dist/env.d.ts",
-      "import": "./dist/env.js",
-      "require": "./dist/env.js"
+      "types": "./dist/env/index.d.ts",
+      "import": "./dist/env/index.js",
+      "require": "./dist/env/index.js"
     }
   },
   "scripts": {
-    "build": "pnpm clean && tsc",
+    "dev": "tsc",
+    "build": "tsc",
     "type-check": "tsc --noEmit",
     "lint": "biome lint src",
     "format": "biome format src --write",

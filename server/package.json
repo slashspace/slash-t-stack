@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "@slash-kit/server",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -19,12 +19,11 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
+    "@slash-kit/shared": "workspace:*",
     "@hono/node-server": "^1.17.1",
-    "hono": "^4.8.9",
-    "shared": "workspace:*"
+    "hono": "^4.8.9"
   },
   "devDependencies": {
-    "@types/node": "^20.11.17",
     "pkgroll": "^2.14.5",
     "tsx": "^4.7.1"
   }

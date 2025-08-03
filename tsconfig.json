@@ -27,13 +27,6 @@
 		// Optional strict flags (disabled by default)
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
-		"noPropertyAccessFromIndexSignature": false,
-
-		// Paths
-		"paths": {
-			"@client": ["./client/src"],
-			"@server": ["./server/src"],
-			"@shared/*": ["./shared/src/*"]
-		}
+		"noPropertyAccessFromIndexSignature": false
 	}
 }

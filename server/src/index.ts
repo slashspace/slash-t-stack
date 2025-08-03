@@ -1,5 +1,5 @@
 import { serve } from "@hono/node-server";
-import { env } from "@shared/env";
+import { env } from "@slash-kit/shared/env";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import demoRouter from "./routes/demo";
