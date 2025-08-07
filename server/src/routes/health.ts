@@ -1,4 +1,4 @@
-import type { ApiResponse } from "@slash-kit/shared/types";
+import type { ApiResponse } from "@slash-kit/types";
 import { Hono } from "hono";
 
 const router = new Hono();

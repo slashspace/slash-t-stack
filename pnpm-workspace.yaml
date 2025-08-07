@@ -1,7 +1,7 @@
 packages:
   - "client"
   - "server"
-  - "shared"
+  - "packages/*"
 catalog:
   typescript: ^5.8.3
   zod: ^4.0.14
