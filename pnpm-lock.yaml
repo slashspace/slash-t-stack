@@ -43,6 +43,28 @@ importers:
         specifier: ^1.12.2
         version: 1.12.2
 
+  apps/server:
+    dependencies:
+      '@hono/node-server':
+        specifier: ^1.17.1
+        version: 1.17.1(hono@4.8.9)
+      '@slash-kit/env':
+        specifier: workspace:*
+        version: link:../../packages/env
+      '@slash-kit/types':
+        specifier: workspace:*
+        version: link:../../packages/types
+      hono:
+        specifier: ^4.8.9
+        version: 4.8.9
+    devDependencies:
+      pkgroll:
+        specifier: ^2.14.5
+        version: 2.14.5(typescript@5.9.2)
+      tsx:
+        specifier: ^4.7.1
+        version: 4.20.3
+
   packages/db:
     dependencies:
       drizzle-orm:
@@ -66,28 +88,6 @@ importers:
         version: 0.13.8(typescript@5.9.2)(zod@4.0.15)
 
   packages/types: {}
-
-  server:
-    dependencies:
-      '@hono/node-server':
-        specifier: ^1.17.1
-        version: 1.17.1(hono@4.8.9)
-      '@slash-kit/env':
-        specifier: workspace:*
-        version: link:../packages/env
-      '@slash-kit/types':
-        specifier: workspace:*
-        version: link:../packages/types
-      hono:
-        specifier: ^4.8.9
-        version: 4.8.9
-    devDependencies:
-      pkgroll:
-        specifier: ^2.14.5
-        version: 2.14.5(typescript@5.9.2)
-      tsx:
-        specifier: ^4.7.1
-        version: 4.20.3
 
 packages:
 

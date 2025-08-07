@@ -15,7 +15,7 @@
     "lint": "pnpm -r run lint",
     "format": "pnpm -r run format",
     "clean": "pnpm -r run clean",
-    "postinstall": "pnpm --filter @slash-kit/shared build && pnpm --filter './packages/**' build"
+    "postinstall": "pnpm --filter './packages/**' build"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.1.2",
