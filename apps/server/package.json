@@ -11,12 +11,13 @@
     }
   },
   "scripts": {
-    "dev": "tsx watch src/index.ts",
+    "dev": "pnpm with-env tsx watch src/index.ts",
     "build": "pnpm clean && pkgroll",
     "type-check": "tsc --noEmit",
     "lint": "biome lint .",
     "format": "biome format . --write",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "with-env": "dotenvx run -f ../../.env --"
   },
   "dependencies": {
     "@slash-kit/env": "workspace:*",

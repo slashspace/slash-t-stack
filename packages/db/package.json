@@ -23,13 +23,14 @@
     "lint": "biome lint src",
     "format": "biome format src --write",
     "clean": "rm -rf dist",
-    "db:generate": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate",
-    "db:push": "drizzle-kit push",
-    "db:pull": "drizzle-kit pull",
-    "db:check": "drizzle-kit check",
-    "db:up": "drizzle-kit up",
-    "db:studio": "drizzle-kit studio"
+    "with-env": "dotenvx run -f ../../.env --",
+    "db:generate": "pnpm with-env drizzle-kit generate",
+    "db:migrate": "pnpm with-env drizzle-kit migrate",
+    "db:push": "pnpm with-env drizzle-kit push",
+    "db:pull": "pnpm with-env drizzle-kit pull",
+    "db:check": "pnpm with-env drizzle-kit check",
+    "db:up": "pnpm with-env drizzle-kit up",
+    "db:studio": "pnpm with-env drizzle-kit studio"
   },
   "dependencies": {
     "@slash-kit/env": "workspace:*",

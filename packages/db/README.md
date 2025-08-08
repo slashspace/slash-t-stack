@@ -16,21 +16,21 @@ This package contains the database schema and tooling for migrations using Drizz
 This project uses PostgreSQL. Migrations are generated to `./drizzle` from the TypeScript schema under `./src/schema`.
 
 ```ts
-import { env } from "@slash-kit/env";
 import { defineConfig } from "drizzle-kit";
 
 export default defineConfig({
   out: "./drizzle",
-  schema: "./src/schema",
+  schema: "./src/schema/**/*.ts",
   dialect: "postgresql",
   dbCredentials: {
-    url: env.DATABASE_URL,
+    // Provide DATABASE_URL via environment when running drizzle-kit
+    url: process.env.DATABASE_URL!,
   },
 });
 ```
 
 > [!NOTE]
-> - For larger codebases you can widen the schema glob to `./src/schema/**/*.ts` to avoid missing new files.
+> - Use a glob like `./src/schema/**/*.ts` to avoid missing new files.
 > - Never hardcode credentials; always read from env (`DATABASE_URL`).
 
 ### NPM scripts
