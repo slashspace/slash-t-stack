@@ -6,11 +6,11 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "default": "./dist/index.js"
     }
   },
   "scripts": {
-    "build": "tsc",
+    "build": "pnpm clean && tsc",
     "type-check": "tsc --noEmit",
     "lint": "biome lint src",
     "format": "biome format src --write",
