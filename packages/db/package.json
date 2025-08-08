@@ -14,9 +14,17 @@
     "type-check": "tsc --noEmit",
     "lint": "biome lint src",
     "format": "biome format src --write",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:pull": "drizzle-kit pull",
+    "db:check": "drizzle-kit check",
+    "db:up": "drizzle-kit up",
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
+    "@slash-kit/env": "workspace:*",
     "drizzle-orm": "^0.44.2",
     "pg": "^8.16.3"
   },

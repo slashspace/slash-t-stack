@@ -15,7 +15,14 @@
     "lint": "pnpm -r run lint",
     "format": "pnpm -r run format",
     "clean": "pnpm -r run clean",
-    "postinstall": "pnpm --filter './packages/**' build"
+    "postinstall": "pnpm --filter './packages/**' build",
+    "db:generate": "pnpm --filter '@slash-kit/db' db:generate",
+    "db:migrate": "pnpm --filter '@slash-kit/db' db:migrate",
+    "db:push": "pnpm --filter '@slash-kit/db' db:push",
+    "db:pull": "pnpm --filter '@slash-kit/db' db:pull",
+    "db:check": "pnpm --filter '@slash-kit/db' db:check",
+    "db:up": "pnpm --filter '@slash-kit/db' db:up",
+    "db:studio": "pnpm --filter '@slash-kit/db' db:studio"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.1.2",

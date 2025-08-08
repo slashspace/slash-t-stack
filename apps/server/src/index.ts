@@ -2,14 +2,14 @@ import { serve } from "@hono/node-server";
 import { env } from "@slash-kit/env";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
-import demoRouter from "./routes/demo";
 import healthRouter from "./routes/health";
+import userRouter from "./routes/user";
 
 const app = new Hono();
 app.use(cors());
 
 // routes
-app.route("/api", demoRouter);
+app.route("/api/user", userRouter);
 app.route("/health", healthRouter);
 
 const server = serve(

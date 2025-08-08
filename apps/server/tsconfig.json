@@ -1,8 +1,9 @@
 {
-	"extends": "../../tsconfig.json",
+	"extends": "../../tsconfig.base.json",
 	"compilerOptions": {
 		// Environment settings
 		"jsxImportSource": "hono/jsx",
+		"outDir": "./dist",
 
 		// Output settings
 		"emitDecoratorMetadata": true,
