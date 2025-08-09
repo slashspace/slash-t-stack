@@ -1,4 +1,4 @@
-## Drizzle Kit in @slash-kit/db
+## @slash-kit/db
 
 This package contains the database schema and tooling for migrations using Drizzle Kit. It follows a migration-first workflow suitable for team collaboration and CI/CD.
 
